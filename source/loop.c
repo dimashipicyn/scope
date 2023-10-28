@@ -37,7 +37,7 @@ void update()
 void render(GfxContext* gfxContext)
 {
     glViewport(0, 0, gfxContext->width, gfxContext->height);
-    glClearColor(1.f, 0.f, 1.f, 0.f);
+    glClearColor(0.1f, 0.2f, 0.1f, 0.2f);
     glClear(GL_COLOR_BUFFER_BIT);
 
     SDL_GL_SwapWindow(gfxContext->window);
