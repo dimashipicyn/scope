@@ -1,0 +1,123 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/${presetName}",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_CXX_STANDARD": "17",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF",
+        "CMAKE_PREFIX_PATH": "$env{QTROOT}",
+        "CMAKE_RUNTIME_OUTPUT_DIRECTORY": "${sourceDir}/bin"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "intelliSenseMode": "windows-clang-x64"
+        }
+      }
+    },
+    {
+      "name": "base debug",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "base release",
+      "hidden": true,
+      "inherits": "base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "msvc",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      }
+    },
+    {
+      "name": "gcc",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++"
+      }
+    },
+    {
+      "name": "clang",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      }
+    },
+    {
+      "name": "msvc-debug",
+      "inherits": ["base debug", "msvc"]
+    },
+    {
+      "name": "msvc-release",
+      "inherits": ["base release", "msvc"]
+    },
+    {
+      "name": "gcc-debug",
+      "inherits": ["base debug", "gcc"]
+    },
+    {
+      "name": "gcc-release",
+      "inherits": ["base release", "gcc"]
+    },
+    {
+      "name": "clang-debug",
+      "inherits": ["base release", "clang"]
+    },
+    {
+      "name": "clang-release",
+      "inherits": ["base release", "clang"]
+    },
+    {
+      "name": "gperf",
+      "inherits": "gcc-debug",
+      "cacheVariables": {
+        "GPERF_ENABLED": "ON"
+      }
+    },
+    {
+      "name": "msvc-asan",
+      "inherits": "msvc-debug",
+      "cacheVariables": {
+        "ASAN_ENABLED": "ON"
+      }
+    },
+    {
+      "name": "clang-asan",
+      "inherits": "clang-debug",
+      "cacheVariables": {
+        "ASAN_ENABLED": "ON"
+      }
+    }
+  ],
+
+  "buildPresets": [
+    {
+      "name": "default-build",
+      "displayName": "Default",
+      "configurePreset": "clang-debug",
+      "description": "Vanilla build"
+    }
+  ]
+}
