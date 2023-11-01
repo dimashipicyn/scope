@@ -9,8 +9,6 @@
 #include <SDL2/SDL.h>
 #include <cglm/cglm.h>
 
-#define CODE(...) #__VA_ARGS__
-
 int handleEvent(void)
 {
     SDL_Event Event;
