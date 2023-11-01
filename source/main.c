@@ -5,6 +5,9 @@
 
 int main(int argc, char* argv[])
 {
+    (void)argc;
+    (void)argv;
+
     GfxContext gfxContext;
     if (gfxInit(&gfxContext, "Scope", 800, 600))
     {

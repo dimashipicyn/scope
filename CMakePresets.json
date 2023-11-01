@@ -83,7 +83,7 @@
     },
     {
       "name": "clang-debug",
-      "inherits": ["base release", "clang"]
+      "inherits": ["base debug", "clang"]
     },
     {
       "name": "clang-release",

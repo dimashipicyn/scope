@@ -2,3 +2,15 @@
 	path = libs/SDL
 	url = https://github.com/libsdl-org/SDL.git
 	branch = SDL2
+[submodule "libs/glew"]
+	path = libs/glew
+	url = https://github.com/nigels-com/glew.git
+[submodule "libs/glew-cmake"]
+	path = libs/glew-cmake
+	url = https://github.com/Perlmint/glew-cmake.git
+[submodule "libs/glm"]
+	path = libs/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "libs/cglm"]
+	path = libs/cglm
+	url = https://github.com/recp/cglm.git
